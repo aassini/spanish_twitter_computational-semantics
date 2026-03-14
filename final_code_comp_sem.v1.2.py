@@ -2,21 +2,17 @@
 
 #then you will want to merge all of the files for each city together so you should have 3 master csv files in 1 folder
 
-#then we can do the distributional analysis in Python. I'll send you a separate R file with directions on how to merge multiple csv files
+#then it's possible to do the distributional analysis in Python. 
 
+#Once we have the 3 master csv files for ABQ, LA, and SA then we can run the following code to do our distributional analysis
 
-#but once you have the 3 master csv files for ABQ, LA, and SA then we can run the following code to do our distributional analysis
+#step 1 : import the following packages:
 
-#step 1 : import a lot of packages:
-
-#yikes, so in my current code I am using a stopwords package that I had to download separately, but you could just use the SPanish stopwords from nltk, but you will want to adjust the code to direct itself to that.
 import os
 import nltk
 import import math
 import pandas as pd
 import string
-
-#I think numpy is all that we are using currently, so maybe we don't need scipy
 import numpy
 import scipy
 
@@ -24,10 +20,10 @@ import scipy
 from nltk.corpus import stopwords
 stop_words = stopwords.words('spanish')
 
-#this list I apply to get rid of some of this BS, cause it was the only way I could clean up my data
+#this list I apply to get rid of some of the noise to clean up the data
 letters= ['', 'r', 's', 't', 'l', 'i', 'n', 'm', 'c', 'u', 'd', 'p', 'ã', 'h', 'g', 'b', 'í', 'v', 'j', 'x', 'q', 'f', 'z', 'e', 'a', 'â', '\x93', 'o', 'w', '¡', '³', '½', '\x80', 'y', '¦', '\xad', '¸']
 
-#this creates the path to the folder where I have my 3 master csv files for the data
+#this creates the path to the folder where I have my 3 master csv files for the data (yours will be different)
 data_dir="/Users/SanchoPanza/Documents/collect_orale/preprocess_r/"
 
 #preprocessing function to remove unwanted data and stopwords
@@ -322,7 +318,7 @@ space= make_space(data_dir, wi, 10000)
 ppmispace = ppmi_transform(space, wi)
 svdspace = svd_transform(ppmispace, 1000, 300)
 
-#then I tried typing in the functions to get cosines and vector stuff from our data:
+#then I tried typing in the functions to get cosines and vector from our data:
 
 cosine("orale1", "orale2", svdspace)
 
