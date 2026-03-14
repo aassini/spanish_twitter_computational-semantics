@@ -6,11 +6,12 @@ The word órale, in the Mexican and border varieties of Spanish can take on many
 Utilizing Twitter as a resource, we gathered tweets containing órale to investigate regional differences in usage by comparing vector space distributional models across several US cities and Mexico City, examining whether English contact coincides with any differences in usage.
 
 ## Methods 
+R was used to connect to the Twitter API and collect the geographically delimited tweets with "órale" and Python was utilized to perform the semantic analysis.
 
-- Cosine similarity
-- Corpus analysis
 - City comparison: San Antonio, Los Angeles, Albuquerque
 - Dataset: 212,966 tweets
+- Cosine similarity
+- Corpus analysis
 
 ## Results
 The distributional analysis of Twitter data suggests regional differences in usage of órale across cities:
